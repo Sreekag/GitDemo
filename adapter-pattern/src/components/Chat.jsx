@@ -5,15 +5,21 @@ export default function Chat() {
   const [englishMessage, setEnglishMessage] = useState("");
   const [frenchMessage, setFrenchMessage] = useState("");
   const [translatedMessage, setTranslatedMessage] = useState("");
-
-  const handleEnglishSend = () => {
-    const translation = translationAdapter(englishMessage, "French");
-    setTranslatedMessage(translation);
-  };
-
-  const handleFrenchSend = () => {
-    const translation = translationAdapter(frenchMessage, "English");
-    setTranslatedMessage(translation);
+  const [error, setError] = useState(""); 
+//throw error if it starts with ⚠️
+  const handleTranslation = (message, language) => {
+    try {
+      const translation = translationAdapter(message, language);
+      if (translation.startsWith("⚠️")) {
+        setError(translation);
+      } else {
+        setTranslatedMessage(translation);
+        setError("");
+      }
+    } catch (err) {
+      console.error("Error in translation:", err.message);
+      setError("⚠️ Unexpected error occurred.");
+    }
   };
 
   return (
@@ -29,7 +35,10 @@ export default function Chat() {
           className="border p-2 w-full rounded"
           placeholder="Type in English..."
         />
-        <button onClick={handleEnglishSend} className="mt-2 bg-blue-500 text-white px-4 py-2 rounded">
+        <button
+          onClick={() => handleTranslation(englishMessage, "French")}
+          className="mt-2 bg-blue-500 text-white px-4 py-2 rounded"
+        >
           Send
         </button>
       </div>
@@ -43,10 +52,15 @@ export default function Chat() {
           className="border p-2 w-full rounded"
           placeholder="Tapez en français..."
         />
-        <button onClick={handleFrenchSend} className="mt-2 bg-green-500 text-white px-4 py-2 rounded">
+        <button
+          onClick={() => handleTranslation(frenchMessage, "English")}
+          className="mt-2 bg-green-500 text-white px-4 py-2 rounded"
+        >
           Envoyer
         </button>
       </div>
+
+      {error && <p className="text-red-500">{error}</p>}
 
       <div className="mt-4 p-3 bg-white rounded shadow">
         <h3 className="font-semibold">Translated Message</h3>

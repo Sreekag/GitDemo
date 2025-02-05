@@ -2,18 +2,25 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     /* background-color: #128c7e; */
-    background: linear-gradient(to bottom, #128c7e 50%, #e5ddd5 80%);
+    /* background: linear-gradient(to bottom, #128c7e 50%, #e5ddd5 80%); */
+    background: linear-gradient(
+      to top,
+      #d8dedd 0%,
+      #d8dedd 80%,
+      #128c7e 5%,
+      #128c7e 20%
+    );
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
   }
 
   .container {
     display: flex;
     width: 90%;
-    max-width: 1200px;
-    height: 80vh;
+    max-width: 1300px;
+    height: 90vh;
     background-color: #fff;
   }
   

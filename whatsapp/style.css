@@ -48,14 +48,55 @@ body {
   .actions .icon {
     margin-left: 10px;
     cursor: pointer;
+    font-size: 2em;
   }
   
   .search {
-    padding: 10px;
-    background-color: #f8f9fa;
+    position: relative;
+    width: 23em;
   }
-  
-
+  .settings
+  {
+    position: absolute;
+    top:10px;
+    right: 10px;
+   cursor: pointer;
+    color: #443f3f;
+    font-size: 2em;
+   
+  }
+  .search .input {
+    width: 24em;
+    padding: 8px 8px 8px 40px; 
+    border: none;
+    
+    background-color: #fff;
+  }
+  .line
+  {
+    background-color: gainsboro;
+    opacity: 0.5;
+    
+  }
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    margin-right: 10px;
+  }
+  .smiley {
+    font-size: 2em; 
+}
+.paper
+{
+  font-size:1.5em;;
+}
+.send
+{
+  font-size: 1.3em;
+}
   .search input {
     width: 100%;
     padding: 8px;
@@ -63,6 +104,18 @@ body {
     border-radius: 20px;
     background-color: #fff;
   }
+  .date {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 10px auto;
+    margin-left: 30em;
+    background-color: #74dedf;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 0.8em;
+    
+}
   
   .contact-list {
     flex: 1;
@@ -109,6 +162,7 @@ body {
   
   .chat-header {
     display: flex;
+    position:relative;
     align-items: center;
     padding: 10px;
     background-color: #ededed;
@@ -123,6 +177,7 @@ body {
   
   .chat-info {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
   }
   
@@ -152,12 +207,14 @@ body {
   .message.received {
     background-color: #fff;
     align-self: flex-start;
+    width: 20vh;
   }
   
   .message.sent {
     background-color: #dcf8c6;
     align-self: flex-end;
     margin-left: auto;
+    width: 20vh;
   }
   
   .chat-input {

@@ -3,6 +3,7 @@
 <head>
   <title>WhatsApp Web Clone</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
   
@@ -12,17 +13,14 @@
       <div class="header">
         <img src="./assets/girl.jpg" alt="Profile" class="profile-pic">
         <div class="actions">
-          <span class="icon">&#9776;</span> 
-          <!-- This one is hamburger icon's unicode(menu icon) -->
-
-          <!-- And this is for that mail icon -->
-          <span class="icon">&#9993;</span>
-          <!-- for ellipse icon -->
+          <i class="material-icons">&#xe0b7;</i>
           <span class="icon">&#8942;</span>
         </div>
       </div>
       <div class="search">
-        <input type="text" placeholder="Search or start new chat">
+        <i class="material-icons search-icon">search</i>
+        <input type="text" class="input" placeholder="seacrh or start new chat">
+       
       </div>
       <div class="contact-list">
         <div class="contact">
@@ -32,6 +30,7 @@
             <span class="last-message">ate?</span>
           </div>
         </div>
+        <hr class="line">
         <div class="contact">
           <img src="./assets/mummy.jpg" alt="Contact" class="contact-pic">
           <div class="contact-info">
@@ -48,17 +47,24 @@
           <span class="chat-name">Mummy</span>
           <span class="status">Online</span>
         </div>
+        <span class="settings">&#8942;</span>
       </div>
       <!-- <div class="date">
         Today
       </div> -->
+      
+       
+      
       <div class="chat-messages">
-        <div class="message received">ate?</div>
+        <span class="date">Today</span>
+        <div class="message received">did you eat today?</div>
         <div class="message sent">yeah yeah..</div>
       </div>
       <div class="chat-input">
+        <span class="smiley">&#9786;</span>
+        <span class="paper">&#x1F4CE;</span>
         <input type="text" placeholder="Type a message">
-        <button>&#9658;</button>
+        <button class="send">&#9658;</button>
       </div>
     </div>
   </div>

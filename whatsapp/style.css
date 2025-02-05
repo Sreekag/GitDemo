@@ -1,19 +1,19 @@
-/* General Styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
+    /* background-color: #128c7e; */
+    background: linear-gradient(to bottom, #128c7e 50%, #e5ddd5 80%);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
   }
-  
+
   .container {
     display: flex;
     width: 90%;
     max-width: 1200px;
-    height: 90vh;
+    height: 80vh;
     background-color: #fff;
   }
   
